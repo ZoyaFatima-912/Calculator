@@ -45,11 +45,6 @@ function calculation() {
             let number = parseFloat(parts[0]); // The number before the %
             result = number / 100;
 
-            // If there's a second part (e.g., "50% + 10"), handle it
-            if (parts[1]) {
-                result = eval(result + parts[1]); 
-            }
-
             input.value = result;
         } else {
             result = eval(expression);
@@ -71,8 +66,7 @@ function updateHistoryDisplay() {
     historyContainer.innerHTML = ""; // Clear existing history
 
     if (history_array.length === 0) {
-        let nohistory = document.createElement("div");
-        //to display text when it is empty
+        let nohistory = document.createElement("div"); //to display text when it is empty
         nohistory.className = "nohistory";
         nohistory.textContent = "There's no history yet.";
         historyContainer.appendChild(nohistory);
