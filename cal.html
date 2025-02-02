@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="cal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="grandparent">
+
+        <div class="container">
+            <input type="text" id="display" readonly placeholder="0">
+            <div class="parent">
+                <input type="button" value="AC" onclick="all_remove()">
+                <input type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1)">
+                <input type="button" value="%" onclick="enter_value('%')">
+                <input type="button" value="&#247;" onclick="enter_value('&#247;')">
+            </div>
+            <div class="parent">
+                <input type="button" value="7" onclick="enter_value(7)">
+                <input type="button" value="8" onclick="enter_value(8)">
+                <input type="button" value="9" onclick="enter_value(9)">
+                <input type="button" value="*" onclick="enter_value('*')">
+            </div>
+            <div class="parent">
+                <input type="button" value="4" onclick="enter_value(4)">
+                <input type="button" value="5" onclick="enter_value(5)">
+                <input type="button" value="6" onclick="enter_value(6)">
+                <input type="button" value="-" onclick="enter_value('-')">
+            </div>
+            <div class="parent">
+                <input type="button" value="1" onclick="enter_value(1)">
+                <input type="button" value="2" onclick="enter_value(2)">
+                <input type="button" value="3" onclick="enter_value(3)">
+                <input type="button" value="+" onclick="enter_value('+')">
+            </div>
+            <div class="parent">
+                <input type="button" value="0" style="width: 108px;" onclick="enter_value(0)">
+                <input type="button" value="." onclick="enter_value('.')">
+                <input type="button" value="=" onclick="calculation()">
+            </div>
+        </div>
+        <div class="history-parent">
+            <button class="history" onclick="toggleHistory()">
+                History
+            </button>
+            <div class="parent-container" id="parent">
+                <div class="icon-container"><i class="fa-solid fa-trash" onclick="delete_history()"
+                        style="transform: translate(230px,5px);"></i></div>
+                <div class="history-container" id="history"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="cal.js"></script>
+</body>
+
+</html>
