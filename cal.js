@@ -3,15 +3,15 @@ document.addEventListener("DOMContentLoaded", function () {
     updateHistoryDisplay(); 
 });
 
-var input = document.getElementById("display");
-var historyContainer = document.querySelector(".history-container");
-var history_array;
+let input = document.getElementById("display");
+let historyContainer = document.querySelector(".history-container");
+let history_array;
 try {
     history_array = JSON.parse(localStorage.getItem('history'));
 } catch (error) {
     history_array = [];
 }
-var parentContainer = document.getElementById("parent")
+let parentContainer = document.getElementById("parent")
 let isAnyResult = false;
 
 function enter_value(n1) {
